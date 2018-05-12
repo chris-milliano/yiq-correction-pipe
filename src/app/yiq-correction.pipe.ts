@@ -42,7 +42,7 @@ export class YiqCorrectionPipe implements PipeTransform {
 
         // Arbitrarily determined values, based on opinon of how things look
         const YIQ_RATIO_TOLERANCE = 0.4;
-        const BACKGROUND_IS_DARK = 100;
+        //const BACKGROUND_IS_DARK = 100;
 
         // TODO: Test for rgb() and rgba() formats
 

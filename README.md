@@ -34,3 +34,28 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app w
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
 
 ## About the core function
+
+The core logic of this pipe is handled by the function [colorVSBkgdColorYIQ](https://github.com/chris-milliano/yiq-correction-pipe/blob/master/src/app/yiq-correction.pipe.ts).
+
+```javascript
+colorVSBkgdColorYIQ (hexColor, hexBkgdColor): boolean {
+    // returns true
+    // if the difference in the input YIQ values
+    // is outside the arbitrary tolerance value
+}
+```
+
+There is an arbitrary constant set within this function:
+* __YIQ_RATIO_TOLERANCE__
+    * This ratio is to determine how far apart the YIQ values must be to be accepted
+    * Currently set to 0.4
+    * MIN: 0.0 -> All values are excepted (always returns true)
+    * MAX: 1.0 -> No values are excepted (always returns false)
+
+The above function will calculate a YIQ value for each color (hexColor and
+hexBkgdColor).
+
+Then a ratio is taken using both YIQ values.
+
+That ratio is then compared to the the __YIQ_RATIO_TOLERANCE__ to determine if
+the colors have a large enough difference.
