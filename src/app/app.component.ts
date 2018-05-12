@@ -7,6 +7,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
 
+    // TODO: Allow user some way to view and set colorOptions
+    // Hold color variables
     innerColor: string = '#ff0000';
     backgroundColor: string = '#0000ff';
     colorOptions: string[] = [
