@@ -1,8 +1,46 @@
 <div id="variable-selection" class="box">
-    variable-selection
+    <div class="box">
+        <h3>TEXT COLOR</h3>
+        <input type="color"
+            [value]="innerColor"
+            (input)="innerColor = $event.target.value"
+            #innerColorSelect>
+    </div>
+    <div class="box">
+        <h3>BACKGROUND COLOR</h3>
+        <input type="color"
+            [value]="backgroundColor"
+            (input)="backgroundColor = $event.target.value"
+            #backgroundColorSelect>
+    </div>
 </div>
 
 
 <div id="yiq-display" class="box">
-    yiq-display
+
+    <div id="display" class="box">
+
+
+        <div class="box display__box"
+            [style.backgroundColor]="backgroundColor">
+            <h3 [style.color]="innerColor">
+                NO YIQ CORRECTION
+            </h3>
+        </div>
+
+        <div class="box display__box"
+            [style.backgroundColor]="backgroundColor">
+            <h3 [style.color]="innerColor | yiq : backgroundColor">
+                DEFAULT YIQ CORRECTION
+            </h3>
+        </div>
+
+        <div class="box display__box"
+            [style.backgroundColor]="backgroundColor">
+            <h3 [style.color]="innerColor | yiq : backgroundColor : colorOptions">
+                YIQ CORRECTION WITH OPTIONS
+            </h3>
+        </div>
+
+    </div>
 </div>

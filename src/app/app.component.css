@@ -1,0 +1,28 @@
+#variable-selection {
+    padding: 20px 0;
+    background-color: #ccc;
+    text-align: center;
+}
+
+#display {
+    padding: 20px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.display__box {
+    background-color: #f00;
+    width: 300px;
+    min-height: 200px;
+    margin: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.display__box h3 {
+    width: 80%;
+}

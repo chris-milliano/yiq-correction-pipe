@@ -41,7 +41,7 @@ export class YiqCorrectionPipe implements PipeTransform {
     colorVSBkgdColorYIQ (hexColor, hexBkgdColor): boolean {
 
         // Arbitrarily determined values, based on opinon of how things look
-        const YIQ_RATIO_TOLERANCE = 0.2;
+        const YIQ_RATIO_TOLERANCE = 0.4;
         const BACKGROUND_IS_DARK = 100;
 
         // TODO: Test for rgb() and rgba() formats
