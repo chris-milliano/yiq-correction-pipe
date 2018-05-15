@@ -37,7 +37,7 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 The core logic of this pipe is handled by the function [colorVSBkgdColorYIQ](https://github.com/chris-milliano/yiq-correction-pipe/blob/master/src/app/yiq-correction.pipe.ts).
 
-```javascript
+```typescript
 colorVSBkgdColorYIQ (hexColor, hexBkgdColor): boolean {
     // returns true
     // if the difference in the input YIQ values
@@ -59,3 +59,56 @@ Then a ratio is taken using both YIQ values.
 
 That ratio is then compared to the the __YIQ_RATIO_TOLERANCE__ to determine if
 the colors have a large enough difference.
+
+
+## Usage instructions
+
+#### Include the pipe
+
+After including this pipe into your Angular app module, you can use it in
+your component.html or component inline html.
+
+#### Use pipe (Default)
+
+###### In component.ts
+```
+innerColor: string = '#ff0000';
+backgroundColor: string = '#0000ff';
+```
+
+###### In component.html
+```
+<div class="box display__box"
+    [style.backgroundColor]="backgroundColor">
+    <h3 [style.color]="innerColor | yiq : backgroundColor">
+        DEFAULT YIQ CORRECTION
+    </h3>
+</div>
+```
+
+
+#### Use pipe (w/ fallback options)
+
+###### In component.ts
+```
+innerColor: string = '#ff0000';
+backgroundColor: string = '#0000ff';
+colorOptions: string[] = [
+    '#ff0000',
+    '#ff7f00',
+    '#ffff00',
+    '#00ff00',
+    '#0000ff',
+    '#8b00ff'
+];
+```
+
+###### In component.html
+```
+<div class="box display__box"
+    [style.backgroundColor]="backgroundColor">
+    <h3 [style.color]="innerColor | yiq : backgroundColor : colorOptions">
+        YIQ CORRECTION WITH OPTIONS
+    </h3>
+</div>
+```
