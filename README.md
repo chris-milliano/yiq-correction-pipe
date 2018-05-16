@@ -112,3 +112,15 @@ colorOptions: string[] = [
     </h3>
 </div>
 ```
+
+## Built With
+
+* [Angular](http://www.angular.io) - The web framework used
+
+## Authors
+
+* **Chris Milliano** - *Initial work* - [chris-milliano](https://github.com/chris-milliano/yiq-correction-pipe)
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE.md](https://github.com/chris-milliano/yiq-correction-pipe/blob/master/LICENSE.md) file for details
